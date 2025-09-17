@@ -1,4 +1,13 @@
 import 'package:flutter/material.dart';
+import 'basic_widgets/text_widget.dart';
+import 'basic_widgets/image_widget.dart';
+// Import semua widget yang sudah dibuat
+import 'basic_widgets/loading_cupertino.dart';
+import 'basic_widgets/fab_widget.dart';
+import 'basic_widgets/scaffold_widget.dart';
+import 'basic_widgets/dialog_widget.dart';
+import 'basic_widgets/textfield_widget.dart';
+import 'basic_widgets/datepicker_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +40,18 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
+
+      // ---------------------------------------------------------
+      // NOTE: Jika ingin mencoba widget lain, ganti `home:` di atas
+      // dengan salah satu widget berikut:
+      //
+      // home: LoadingCupertino(),
+      // home: FabWidget(),
+      // home: ScaffoldWidget(),
+      // home: DialogWidget(),
+      // home: TextFieldWidget(),
+      // home: DatePickerWidget(),
+      // ---------------------------------------------------------
     );
   }
 }
@@ -104,7 +125,8 @@ class _MyHomePageState extends State<MyHomePage> {
           // wireframe for each widget.
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text('You have pushed the button this many times:'),
+            const MyImageWidget(),
+            const MyTextWidget(),
             Text(
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
